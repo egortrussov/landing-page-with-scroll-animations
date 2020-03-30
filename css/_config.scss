@@ -1,0 +1,76 @@
+$primary-color: #4ADB71;
+$dark-color: #42C465;
+$danger-color: #fc393e;
+
+html {
+
+    --primary-color: #4ADB71;
+    --bg-color: #4ADB71;
+    --dark-color: #42C465;
+    --dark-color-lighten: rgb(77, 209, 112);
+    --dark-primary-color: #42C465;
+    --main-bg-color: #fff;
+    --dark-main-bg-color: #eee;
+    --dark-main-bg-color-shade: #e7e7e7;
+    --main-text-color: #000;
+    --danger-color: #fc393e;
+}
+
+@media(prefers-color-scheme: dark) {
+    html {
+        --bg-color: #333;
+        --primary-color: rgb(42, 150, 71);
+        --dark-primary-color: rgb(42, 150, 71);
+        --dark-color: #2b2b2b;
+        --dark-color-lighten: #313131;
+        --main-bg-color: #444;
+        --dark-main-bg-color: rgb(61, 61, 61);
+        --dark-main-bg-color-shade: rgb(59, 59, 59);
+        --main-text-color: #fff;
+        --danger-color: #ff4a50;
+    }
+}
+
+
+
+@mixin desktop {
+    @media (min-width: 1540px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (max-width: 1120px) {
+        @content;
+    }
+}
+
+@mixin tablet-lg {
+    @media (max-width: 1000px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 890px) {
+        @content;
+    }
+}
+
+@mixin tablet-sm {
+    @media (max-width: 770px) {
+        @content;
+    }
+}
+
+@mixin tablet-xsm {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin tablet-xxsm {
+    @media (max-width: 470px) {
+        @content;
+    }
+}
