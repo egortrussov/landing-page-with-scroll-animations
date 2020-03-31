@@ -37,8 +37,9 @@ nav {
 }
 
 .section-heading2 {
-    font-size: 2.7rem;
-    font-weight: 700;;
+    font-size: 3rem;
+    font-weight: 800;;
+    line-height: 1;
 }
 
 .btn {
@@ -70,9 +71,9 @@ section {
     height: 100vh;
 
     // ---------
-    position: absolute;
+    //position: absolute;
     transition: all .2s;
-    top: 0;
+    //top: 0;
 
     &.hidden {
         opacity: 0;
@@ -116,41 +117,83 @@ section {
     &#section2 {
 
         .section-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include tablet {
+                flex-direction: column;
+            }
+
+            position: relative;
             height: 100%;
             padding: 0 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center !important;
 
-            .right-block {
-                width: 100%;
-                max-height: 60vh !important;
-                margin-right: 2rem;
+            .img-block {
+                @include laptop {
+                    top: 0;
+                }
+
+                @include tablet {
+                    flex-direction: column;
+                    margin-left: -30%;
+                    margin-top: -0%;;
+                    height: 10px !important;
+                    width: auto !important;
+                }
+
+                @include tablet-sm {
+                    margin-top: 10%;
+                    margin-left: 0%;
+                    
+                    img {
+                        width: 70vw;
+                    }
+                }
+
+                position: relative;
+                max-height: 50vh;
+                width: 40px !important;
+                z-index: -1;
+                top: -15vh;
 
                 img {
-                    width: 100%;
-                    height: 100%;
-                    max-height: 60vh !important;
+                    @include tablet-sm {
+                        width: 70vw;
+                    }
+
+                    position: absolute;
+                    width: 50vw;
+                    max-height: 80vh;
                 }
             }
 
-            .left-block {
-                width: 100%;
-                margin-right: 4rem;
-
-                .section-heading2 {
-                    margin-bottom: 1rem;
+            .right-block {
+                @include tablet {
+                    margin-left: 0;
+                    margin-top: 15rem;
                 }
+
+                @include tablet-sm {
+                    margin-left: 0rem;
+                    width: 100% !important;
+                }
+
+                position: relative;
+                z-index: 1;
+                width: 50vw;
+                max-height: 60vh !important;
+                padding: 2rem;
+                border-radius: 3rem;
+                margin-left: 20rem;
+                margin-top: 5rem;
+                max-width: 400px;
+                background-color: #fff;
+                box-shadow: 0 0 3rem rgba(#000, .15);
 
                 p {
-                    color: rgb(65, 65, 65);
-                    line-height: 1.7;
-                    margin-top: 1rem;
-                    font-size: 1.2rem;
-                }
-
-                .btn {
-                    margin-top: 2rem;
+                    margin-top: 1.5rem;
+                    line-height: 1.6;
+                    font-size: 1.1rem;
                 }
             }
         }
